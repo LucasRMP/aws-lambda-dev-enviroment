@@ -3,13 +3,13 @@
 // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
 import { Controller, ValidationService, FieldErrors, ValidateError, TsoaRoute } from 'tsoa';
 // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
-import { BookController } from './../book/routes/BookController';
+import { BookController } from './../app/controllers/BookController';
 import * as express from 'express';
 
 // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
 
 const models: TsoaRoute.Models = {
-    "BookDto": {
+    "Book": {
         "dataType": "refObject",
         "properties": {
             "id": { "dataType": "double", "required": true },
@@ -74,7 +74,7 @@ export function RegisterRoutes(app: express.Express) {
     app.post('/api/book',
         function(request: any, response: any, next: any) {
             const args = {
-                book: { "in": "body", "name": "book", "required": true, "ref": "BookDto" },
+                book: { "in": "body", "name": "book", "required": true, "ref": "Book" },
             };
 
             // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
@@ -96,7 +96,7 @@ export function RegisterRoutes(app: express.Express) {
     app.put('/api/book',
         function(request: any, response: any, next: any) {
             const args = {
-                book: { "in": "body", "name": "book", "required": true, "ref": "BookDto" },
+                book: { "in": "body", "name": "book", "required": true, "ref": "Book" },
             };
 
             // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
@@ -183,15 +183,15 @@ export function RegisterRoutes(app: express.Express) {
                 case 'request':
                     return request;
                 case 'query':
-                    return validationService.ValidateParam(args[key], request.query[name], name, fieldErrors, undefined, { "controllerPathGlobs": ["./src/**/*Controller.ts"], "specVersion": 2 });
+                    return validationService.ValidateParam(args[key], request.query[name], name, fieldErrors, undefined, { "controllerPathGlobs": ["./src/app/**/*Controller.ts"], "specVersion": 2 });
                 case 'path':
-                    return validationService.ValidateParam(args[key], request.params[name], name, fieldErrors, undefined, { "controllerPathGlobs": ["./src/**/*Controller.ts"], "specVersion": 2 });
+                    return validationService.ValidateParam(args[key], request.params[name], name, fieldErrors, undefined, { "controllerPathGlobs": ["./src/app/**/*Controller.ts"], "specVersion": 2 });
                 case 'header':
-                    return validationService.ValidateParam(args[key], request.header(name), name, fieldErrors, undefined, { "controllerPathGlobs": ["./src/**/*Controller.ts"], "specVersion": 2 });
+                    return validationService.ValidateParam(args[key], request.header(name), name, fieldErrors, undefined, { "controllerPathGlobs": ["./src/app/**/*Controller.ts"], "specVersion": 2 });
                 case 'body':
-                    return validationService.ValidateParam(args[key], request.body, name, fieldErrors, name + '.', { "controllerPathGlobs": ["./src/**/*Controller.ts"], "specVersion": 2 });
+                    return validationService.ValidateParam(args[key], request.body, name, fieldErrors, name + '.', { "controllerPathGlobs": ["./src/app/**/*Controller.ts"], "specVersion": 2 });
                 case 'body-prop':
-                    return validationService.ValidateParam(args[key], request.body[name], name, fieldErrors, 'body.', { "controllerPathGlobs": ["./src/**/*Controller.ts"], "specVersion": 2 });
+                    return validationService.ValidateParam(args[key], request.body[name], name, fieldErrors, 'body.', { "controllerPathGlobs": ["./src/app/**/*Controller.ts"], "specVersion": 2 });
             }
         });
 

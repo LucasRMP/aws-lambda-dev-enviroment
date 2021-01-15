@@ -3,13 +3,11 @@
     "name": "Express serverless swagger API",
     "description": "Express serverless API definitions",
     "version": "1.0.0",
-    "schemes": [ "http" ],
+    "schemes": ["http"],
     "outputDirectory": "./src/generated",
     "entryFile": "./src/app.ts",
     "host": "localhost:3000",
-    "controllerPathGlobs": [
-      "./src/**/*Controller.ts"
-    ],
+    "controllerPathGlobs": ["./src/app/**/*Controller.ts"],
     "basePath": "/api"
   },
   "routes": {
@@ -17,5 +15,6 @@
     "entryFile": "./src/app.ts",
     "routesDir": "./src/generated",
     "middleware": "express"
-  }
+  },
+  "ignore": ["**/node_modules/**"]
 }

@@ -26,12 +26,11 @@
     "sequelize": "~6.3.0",
     "serverless-http": "~2.5.0",
     "serverless-offline": "^6.5.0",
-    "swagger-ui-express": "~4.1.4",
     "tslint": "~6.1.2",
     "tsoa": "~2.5.13"
   },
   "devDependencies": {
-    "sequelize-cli": "~6.2.0",
-    "serverless-offline": "~6.5.0"
+    "@types/node": "^14.14.20",
+    "sequelize-cli": "~6.2.0"
   }
 }

@@ -1,17 +1,18 @@
-import { RegisterRoutes } from "./generated/routes";
 import * as bodyParser from "body-parser";
-import {
+import express, {
   Response as ExResponse,
   Request as ExRequest,
   NextFunction,
 } from "express";
 import { ValidateError } from "tsoa";
+import sls from "serverless-http";
+
 import { ConfigSequelize } from "./config/sequelize/config.sequelize";
+import { RegisterRoutes } from "./generated/routes";
 
-const express = require("express");
-const sls = require("serverless-http");
-const app = express(express.json());
+const app = express();
 
+app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
@@ -21,7 +22,7 @@ const config = new ConfigSequelize();
 config.setupConnection();
 
 app.use(function errorHandler(
-  err: unknown,
+  err: any,
   req: ExRequest,
   res: ExResponse,
   next: NextFunction
